@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sketch</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+</head>
+
+<style>
+  .my {
+    background-color: rgb(115, 114, 142);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .ttt{
+    width: 400px;
+  }
+</style>
+<script>
+  navigator.geolocation.getCurrentPosition(pos)
+  let url;
+  function pos(p) {
+    console.log(p.coords);
+    console.log(p.coords.latitude);
+    console.log(p.coords.longitude);
+    url = "https://www.google.com/maps/search/정형외과/@"
+      + p.coords.latitude
+      + ","
+      + p.coords.longitude
+      + ","
+      + "14z"
+    console.log(url);
+  }
+  function newWin() {
+    open(url);
+  }
+</script>
+
+
+
+
+<body>
+  <div class="my">
+
+    <div class="box m-3">
+      <h1>타박상 치료법
+      </h1>
+      <div class="ttt">
+        <p>
+          1.차가운 육류 : 차가운 육류를 사용하는 것을 영화나 TV 시리즈에서 많이 본 적이 있을 수 있다. 이는 재미있는 모습이지만 동시에 매우 오래되고 높이 평가되는 요법이다. 육류, 특히 스테이크가
+          갓 생기기 시작하는 흔적을 흡수하는 데 도움이 된다고 한다.
+        </p>
+        2.얼음 : 타박상에 얼음을 사용할 때는 매우 조심해야 한다. 얼음이 피부에 자극을 유발하고 동상이 생길 수 있으므로 직접적으로 도포하지 말자.
+        <h2>3.햇빛과 마사지 : 햇빛이 멍 치료에 매우 유용할 수 있다.자외선은 멍을 유발하여 특유의 노란빛을 생기게 하는 빌리루빈을 분해한다.
+        </h2>
+      </div>
+    </div>
+    <div class="m-3">
+      <button class="button is-success is-fullwidth">
+        <a href="p5.html">
+          다시하기
+        </a>
+      </button>
+    </div>
+    <div class="m-3">
+      <button onclick="newWin()" class="button is-danger is-fullwidth">
+        병원찾기
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>
